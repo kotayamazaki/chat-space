@@ -40,8 +40,8 @@ Things you may want to cover:
 |------|----|-------|
 |image|text||
 |text|text||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
 - belongs_to :group
@@ -49,18 +49,19 @@ Things you may want to cover:
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|title|text|null: false|
+<!-- |user_id|reference|null: false, foreign_key: true| -->
+<!-- groupに属しているuser_idが必要と思ったのですが、必要ないでしょうか？ -->
 ### Association
-- belongs_to :massage
+- has_many :massage
 - has_many :users, through: :group_users
 - has_many :group
 
 ## group_userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
 - belongs_to :group
