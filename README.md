@@ -22,3 +22,46 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Chat-Space DB設計
+## userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
+### Association
+- has_many :massage
+- has_many :group, through: :group_user
+- has_many :group_user
+
+## massageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|text||
+|text|text||
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
+### Association
+- belongs_to :users
+- belongs_to :group
+
+## groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|text|null: false|
+<!-- |user_id|reference|null: false, foreign_key: true| -->
+<!-- groupに属しているuser_idが必要と思ったのですが、必要ないでしょうか？ -->
+### Association
+- has_many :massage
+- has_many :users, through: :group_users
+- has_many :group
+
+## group_userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
+### Association
+- belongs_to :users
+- belongs_to :group
