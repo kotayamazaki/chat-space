@@ -34,14 +34,14 @@
     overflow: scroll;
     padding: 0 20px;
     font-weight: bold;
-    &__content{
+    .Group{
       box-sizing: border-box;
       color: white;
       font-size: 15px;
       margin-top: 20px;
       margin-bottom: 5px;
     }
-    &__content--massege{
+    &__message{
       font-size: 11px;
       margin-bottom: 40px;
       color: white;
