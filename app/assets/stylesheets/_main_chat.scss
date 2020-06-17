@@ -21,11 +21,13 @@
       }
     }
     &__edit{
+      display: block;
       height: 40px;
       width: 72px;
       font-size: 16px;
       padding: 0 20px;
       border: 1px solid #38AEF0;
+      box-sizing: border-box;
       .EditColor{
         text-decoration: none;
         color: #38AEF0;
@@ -86,6 +88,7 @@
           border: none;
           height: 50px;
           padding: 0 45px 0 15px;
+          width: 100%;
         }
           &__inputImage{
             color: black;
