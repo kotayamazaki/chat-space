@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe MessagesController do
+describe MessagesController  
   let(:group) { create(:group) }
   let(:user) { create(:user) }
 

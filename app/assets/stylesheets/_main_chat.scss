@@ -34,28 +34,39 @@
     }
   }
 
-  .MessageField{
+  .MessageField {
     background-color: #fafafa;
     box-sizing: border-box;
     padding: 35px 40px 0;
     height: calc(100vh - 100px - 90px);
     overflow: scroll;
-    .MessageName{
-      display: flex;
-      color: #333333;
+  }
+  
+  .MessageBox{
+    margin-bottom: 46px;
+  }
+  
+  .MessageInfo {
+    display: flex;
+    &__userName {
+      color: #434a54;
       font-size: 16px;
       font-weight: bold;
-      .MessageDate{
-        color: #999999;
-        font-size: 12px;
-        margin-left: 10px;
-        font-weight: normal;
-      }
     }
-    .MessageChat{
-      color: #434A54;
+    &__date {
+      color: #999;
+      font-size: 12px;
+      padding-left: 10px;
+    }
+  }
+  .Message {
+    margin-top: 12px;
+    &__content {
+      color: #434a54;
       font-size: 14px;
-      margin: 12px 0 46px 0;
+    }
+    &__image{
+      height: 300px;
     }
   }
   .Footer{
@@ -66,14 +77,14 @@
     .Form{
       display: flex;
       justify-content: space-between;
-      &____contents{
+      &__contents{
         background-color: #fff;
         position: relative;
+        width: 100%;
       }
         &__inputContent{
           border: none;
           height: 50px;
-          width: 950px;
           padding: 0 45px 0 15px;
         }
           &__inputImage{
@@ -82,8 +93,8 @@
             padding-right: 10px;
             text-decoration: none;
             position: absolute;
-            left: 85%;
-            bottom: 20px;
+            left: 95%;
+            bottom: 5px;
           }
           .Hidden{
             display: none;
