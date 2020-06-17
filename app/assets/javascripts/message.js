@@ -60,6 +60,9 @@ $(function(){
       $('form')[0].reset();
       $('input').prop("disabled", false);
     })
+    .always(function(){
+      $('input').prop("disabled", false);
+    })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
     });
